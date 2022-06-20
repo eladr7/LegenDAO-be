@@ -6,9 +6,82 @@ const http = require("http");
 const express = require("express");
 const mongoose = require("mongoose");
 
+const schedule = require("node-schedule");
+
 const clients = {};
 const webSocketsServerPort = 8000;
 const httpPort = 3001;
+
+// *******************************************************
+// *******************************************************
+// Cron job and update MongoDB:
+var mongo = require("mongodb");
+
+const MongoClient = require("mongodb").MongoClient;
+const url = process.env.DATABASE_URL;
+
+function request(method, url) {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.onload = resolve;
+    xhr.onerror = reject;
+    xhr.send();
+  });
+}
+
+var dbObject;
+var dbCloser;
+MongoClient.connect(url, function (err, db) {
+  if (err) throw err;
+  dbObject = db.db(process.env.DATABASE_NAME);
+  dbCloser = db;
+});
+
+schedule.scheduleJob("* * * * *", () => {
+  console.log("I ran");
+  // Calculate the updated token info values and update the DB
+
+  // Get the price of the token in USD:
+  // request(
+  //     'GET',
+  //     'http://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=API-KEY-HERE',
+  //   )
+  //     .then((r1) => {
+  //       const x1 = JSON.parse(r1.target.responseText);
+
+  // Update the token info
+  var o_id = new mongo.ObjectId(process.env.TOKEN_INFO_OBJECT_ID);
+  var myquery = { _id: o_id };
+
+  const updatedValuesObj = {
+    apr: 8.5,
+    apy: 16,
+    liquidity: 100000000,
+    priceUsd: 6.5,
+    totalLocked: 30000000,
+    dailyVolume: 50000000,
+  };
+  var newvalues = {
+    $set: updatedValuesObj,
+  };
+  dbObject
+    .collection(process.env.COLLECTION_NAME)
+    .updateOne(myquery, newvalues, function (err, res) {
+      if (err) throw err;
+      console.log("1 document updated");
+      //   dbCloser.close()
+    });
+
+  // broadcasting message to all connected clients
+  for (key in clients) {
+    // clients[key].sendUTF(message.utf8Data);
+    clients[key].send(JSON.stringify(updatedValuesObj));
+    console.log("sent Message to: ", clients[key]);
+  }
+});
+// *******************************************************
+// *******************************************************
 
 var initHttpServer = () => {
   const app = express();
@@ -80,5 +153,5 @@ var initWebsocketServer = () => {
   });
 };
 
-initHttpServer();
+// initHttpServer();
 initWebsocketServer();
