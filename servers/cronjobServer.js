@@ -1,35 +1,39 @@
 require("dotenv").config();
-
 const Mongo = require("mongodb");
 const schedule = require("node-schedule");
+
+const initWebsocketServer = require("./websocketServer");
 const getUpdatedTokenInfoValues = require("../utils/tokenInfoFetch");
 
-const broadcastToSubscribers = (clients, updatedValuesObj) => {
+var databaseObj;
+var mongoDb;
+Mongo.MongoClient.connect(process.env.DATABASE_URL, function (err, db) {
+  if (err) throw err;
+  databaseObj = db.db(process.env.DATABASE_NAME);
+  mongoDb = db;
+});
+
+const clients = {};
+
+const broadcastToSubscribers = (updatedValuesObj) => {
   for (key in clients) {
     clients[key].send(JSON.stringify(updatedValuesObj));
     console.log("sent Message to: ", clients[key]);
   }
 };
 
-const cronjobServer = (clients) => {
+const cronjobServer = async () => {
+  initWebsocketServer(clients);
+
+  // Calculate the updated token info values and update the DB
   schedule.scheduleJob("* * * * *", async () => {
     console.log("Perform another cron job:");
 
-    // Calculate the updated token info values and update the DB
     const updatedValuesObj = await getUpdatedTokenInfoValues();
-    return;
     if (Object.keys(updatedValuesObj).length === 0) {
       // Fetching the data from osmosis failed; MongoDB should not get updated
       return;
     }
-
-    var databaseObj;
-    var mongoDb;
-    Mongo.MongoClient.connect(process.env.DATABASE_URL, function (err, db) {
-      if (err) throw err;
-      databaseObj = db.db(process.env.DATABASE_NAME);
-      mongoDb = db;
-    });
 
     // Get the query object
     const tokenInfoObjectId = new Mongo.ObjectId(
@@ -47,7 +51,7 @@ const cronjobServer = (clients) => {
       });
 
     // broadcasting message to all connected clients
-    broadcastToSubscribers(clients, updatedValuesObj);
+    broadcastToSubscribers(updatedValuesObj);
   });
 };
 module.exports = cronjobServer;
