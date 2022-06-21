@@ -15,7 +15,9 @@
     "http": "^0.0.1-security",
     "mongoose": "^6.4.0",
     "node-schedule": "^2.1.0",
-    "websocket": "^1.0.34"
+    "secretjs": "^1.2.0-beta.60",
+    "websocket": "^1.0.34",
+    "xhr2": "^0.2.1"
   },
   "devDependencies": {
     "dotenv": "^16.0.1",
