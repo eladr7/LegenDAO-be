@@ -1,0 +1,84 @@
+{
+  "collectionsData": [
+    {
+      "coverImg": "top-secret-col-mint-background-01.png",
+      "info": {
+        "name": "Top Secret Collection",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod \\ntempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a \\ndiam maecenas sed enim ut sem. Pharetra diam sit amet nisl. Cras ornare arcu \\ndui vivamus arcu felis bibendum. Dapibus ultrices in iaculis nunc sed augue \\nlacus viverra vitae. Duis ut diam quam nulla porttitor massa id neque.",
+        "artistDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod \\ntempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a \\ndiam maecenas sed enim ut sem. Pharetra diam sit amet nisl. Cras ornare arcu \\ndui vivamus arcu felis bibendum. Dapibus ultrices in iaculis nunc sed augue \\nlacus viverra vitae. Duis ut diam quam nulla porttitor massa id neque.",
+        "artistName": "XXXX XXXXX XXXX",
+        "startingDate": "2022-04-05",
+        "totalItemNum": "300",
+        "mintPriceWL": "100000",
+        "mintPrice": "1000000",
+        "nftContractAddress": "secret15l9swwemard5jm86yh8qzarl0ehfvvlpvvwdpl",
+        "minterContractAddress": "secret1gjs9tqfysahpxxgulnj98dtxv3h56l45dpum2a",
+        "onSale": "true"
+      }
+    },
+    {
+      "coverImg": "top-secret-col-background-01.png",
+      "info": {
+        "name": "Hall of Legend 1",
+        "description": "There is a hall, full of legends that being kept by mysteries creatures 1",
+        "artistDescription": " 1",
+        "artistName": "XXXX XXXXX XXXX 1",
+        "startingDate": "2022-07-05",
+        "totalItemNum": "100",
+        "mintPriceWL": "100000",
+        "mintPrice": "1000000",
+        "nftContractAddress": "secret1h0m4tep7v9tdzy4z9sr5zaquy6x82wzr6wpc47",
+        "minterContractAddress": "secret1ufru4hllvs05feqeu5ux6vtjumufpklnm4fdq9",
+        "onSale": "true"
+      }
+    },
+    {
+      "coverImg": "top-secret-col-background-01.png",
+      "info": {
+        "name": "Hall of Legend 2",
+        "description": "There is a hall, full of legends that being kept by mysteries creatures 2",
+        "artistDescription": " 2",
+        "artistName": "XXXX XXXXX XXXX 2",
+        "startingDate": "2022-07-12",
+        "totalItemNum": "100",
+        "mintPriceWL": "100000",
+        "mintPrice": "1000000",
+        "nftContractAddress": "secret1dmzqx5csl3kw7qu7879yvmq4uep9k4ms9ak3kx",
+        "minterContractAddress": "secret1emwtgqexw2kle4zqkgw26jwjeype6ejqq2vhwr",
+        "onSale": "true"
+      }
+    },
+    {
+      "coverImg": "top-secret-col-background-01.png",
+      "info": {
+        "name": "Hall of Legend 3",
+        "description": "There is a hall, full of legends that being kept by mysteries creatures 3",
+        "artistDescription": " 3",
+        "artistName": "XXXX XXXXX XXXX 3",
+        "startingDate": "2020-02-08",
+        "totalItemNum": "200",
+        "mintPriceWL": "100000",
+        "mintPrice": "1000000",
+        "nftContractAddress": "some nft address 3",
+        "minterContractAddress": "some minter address 3",
+        "onSale": "false"
+      }
+    },
+    {
+      "coverImg": "top-secret-col-background-01.png",
+      "info": {
+        "name": "Hall of Legend 4",
+        "description": "There is a hall, full of legends that being kept by mysteries creatures 4",
+        "artistDescription": " 4",
+        "artistName": "XXXX XXXXX XXXX 4",
+        "startingDate": "2021-09-03",
+        "totalItemNum": "200",
+        "mintPriceWL": "100000",
+        "mintPrice": "1000000",
+        "nftContractAddress": "some nft address 4",
+        "minterContractAddress": "some minter address 4",
+        "onSale": "false"
+      }
+    }
+  ]
+}
