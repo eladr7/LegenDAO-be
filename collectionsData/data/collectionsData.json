@@ -4,7 +4,8 @@
       "coverImg": "top-secret-col-mint-background-01.png",
       "info": {
         "name": "Top Secret Collection",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod \\ntempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a \\ndiam maecenas sed enim ut sem. Pharetra diam sit amet nisl. Cras ornare arcu \\ndui vivamus arcu felis bibendum. Dapibus ultrices in iaculis nunc sed augue \\nlacus viverra vitae. Duis ut diam quam nulla porttitor massa id neque.",
+        "description": "description: The top secret collection contains things that should be kept secret.\\n5555 pieces of ancient Egyptian mythology symbols. The top secret\\ncollection contains things that should be kept secret. 5555 pieces of\\nancient Egyptian mythology symbols.",
+        "intro": "intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod \\ntempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a \\ndiam maecenas sed enim ut sem. Pharetra diam sit amet nisl. Cras ornare arcu \\ndui vivamus arcu felis bibendum. Dapibus ultrices in iaculis nunc sed augue \\nlacus viverra vitae. Duis ut diam quam nulla porttitor massa id neque.",
         "artistDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod \\ntempor incididunt ut labore et dolore magna aliqua. Suscipit tellus mauris a \\ndiam maecenas sed enim ut sem. Pharetra diam sit amet nisl. Cras ornare arcu \\ndui vivamus arcu felis bibendum. Dapibus ultrices in iaculis nunc sed augue \\nlacus viverra vitae. Duis ut diam quam nulla porttitor massa id neque.",
         "artistName": "XXXX XXXXX XXXX",
         "startingDate": "2022-04-05",
@@ -20,7 +21,8 @@
       "coverImg": "top-secret-col-background-01.png",
       "info": {
         "name": "Hall of Legend 1",
-        "description": "There is a hall, full of legends that being kept by mysteries creatures 1",
+        "description": "description: There is a hall, full of legends that being kept by mysteries creatures 1",
+        "intro": "intro: There is a hall, full of legends that being kept by mysteries creatures 1",
         "artistDescription": " 1",
         "artistName": "XXXX XXXXX XXXX 1",
         "startingDate": "2022-07-05",
@@ -36,7 +38,8 @@
       "coverImg": "top-secret-col-background-01.png",
       "info": {
         "name": "Hall of Legend 2",
-        "description": "There is a hall, full of legends that being kept by mysteries creatures 2",
+        "description": "description: There is a hall, full of legends that being kept by mysteries creatures 2",
+        "intro": "intro: There is a hall, full of legends that being kept by mysteries creatures 2",
         "artistDescription": " 2",
         "artistName": "XXXX XXXXX XXXX 2",
         "startingDate": "2022-07-12",
@@ -52,7 +55,8 @@
       "coverImg": "top-secret-col-background-01.png",
       "info": {
         "name": "Hall of Legend 3",
-        "description": "There is a hall, full of legends that being kept by mysteries creatures 3",
+        "description": "description: There is a hall, full of legends that being kept by mysteries creatures 3",
+        "intro": "intro: There is a hall, full of legends that being kept by mysteries creatures 3",
         "artistDescription": " 3",
         "artistName": "XXXX XXXXX XXXX 3",
         "startingDate": "2020-02-08",
@@ -68,7 +72,8 @@
       "coverImg": "top-secret-col-background-01.png",
       "info": {
         "name": "Hall of Legend 4",
-        "description": "There is a hall, full of legends that being kept by mysteries creatures 4",
+        "description": "description: There is a hall, full of legends that being kept by mysteries creatures 4",
+        "intro": "intro: There is a hall, full of legends that being kept by mysteries creatures 4",
         "artistDescription": " 4",
         "artistName": "XXXX XXXXX XXXX 4",
         "startingDate": "2021-09-03",

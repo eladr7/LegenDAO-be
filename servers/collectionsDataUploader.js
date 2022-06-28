@@ -1,15 +1,19 @@
 require("dotenv").config();
 const Mongo = require("mongodb");
-const schedule = require("node-schedule");
 const fs = require("fs");
 
 const uploadCollectionsData = async (collectionsData) => {
   Mongo.MongoClient.connect(
     process.env.NFT_COLLECTIONS_DATABASE_URL,
-    function (err, db) {
+    async function (err, db) {
       if (err) throw err;
       var databaseObj = db.db(process.env.NFT_COLLECTIONS_DATABASE_NAME);
       var mongoDb = db;
+
+      // Remove all previous entries!
+      await databaseObj
+        .collection(process.env.NFT_COLLECTIONS_COLLECTION_NAME)
+        .deleteMany({ name: { $exists: "" } });
 
       const options = { ordered: true };
       databaseObj
@@ -51,8 +55,9 @@ const loadCollectionsData = () => {
   return collectionsDataToStore;
 };
 
-const collectionsUploaderServer = async () => {
+// Notice that this code will remove all previous collections data entries!!
+const collectionsDataUploaderScript = async () => {
   const collectionsData = loadCollectionsData();
   await uploadCollectionsData(collectionsData);
 };
-module.exports = collectionsUploaderServer;
+module.exports = collectionsDataUploaderScript;

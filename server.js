@@ -1,7 +1,7 @@
 const cronjobServer = require("./servers/cronjobServer");
 const initHttpServer = require("./servers/httpMongoDbServer");
-const collectionsUploaderServer = require("./servers/collectionsDataUploader");
+const collectionsDataUploaderScript = require("./servers/collectionsDataUploader");
 
-cronjobServer();
+// cronjobServer();
 // initHttpServer();
-// collectionsUploaderServer();
+collectionsDataUploaderScript();
