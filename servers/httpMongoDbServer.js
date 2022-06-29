@@ -1,13 +1,13 @@
 require("dotenv").config();
 
 const express = require("express");
-// const cors = require("cors");
+const cors = require("cors");
 const mongoose = require("mongoose");
 const httpPort = 3001;
 
-const initHttpServer = () => {
+const httpServer = () => {
   const app = express();
-  //   app.use(cors());
+  app.use(cors());
   app.use(express.json());
 
   mongoose.connect(process.env.DATABASE_URL, {
@@ -19,11 +19,14 @@ const initHttpServer = () => {
   db.once("open", () => console.log("Connected to Database"));
 
   const tokenInfoRouter = require("../routes/tokenInfoRoutes");
-  app.use("/legendao", tokenInfoRouter);
+  app.use("/token", tokenInfoRouter);
+
+  const collectionsDataRouter = require("../routes/collectionsRoutes");
+  app.use("/collections", collectionsDataRouter);
 
   app.listen(httpPort, () =>
-    console.log("THHP Server Started on port: ", httpPort)
+    console.log("HTTP Server Started on port: ", httpPort)
   );
 };
 
-module.exports = initHttpServer;
+module.exports = httpServer;
